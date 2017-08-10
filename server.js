@@ -5,6 +5,22 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne= {
+    title:"Article-One | GeethaSelvaraj",
+    heading:"Article One",
+    date:"Aug 10,2017",
+    content:`
+            <p>
+                This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>`
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
