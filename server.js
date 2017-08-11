@@ -7,9 +7,9 @@ app.use(morgan('combined'));
 
 var articles = {
      'article-one' : {
-        title:"Article-One | GeethaSelvaraj",
-        heading:"Article One",
-        date:"Aug 10,2017",
+        title:'Article-One | GeethaSelvaraj',
+        heading:'Article One',
+        date:'Aug 10,2017',
         content:`
                 <p>
                     This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS....
@@ -22,9 +22,9 @@ var articles = {
                 </p>`
     },
      'article-two' : {
-        title:"Article-Two | GeethaSelvaraj",
-        heading:"Article Two",
-        date:"Aug 11,2017",
+        title:'Article Two | GeethaSelvaraj',
+        heading:'Article Two',
+        date:'Aug 11,2017',
         content:`
                 <p>
                     This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
@@ -37,9 +37,9 @@ var articles = {
                 </p>`
     },
      'article-three' : {
-        title:"Article-Three | GeethaSelvaraj",
-        heading:"Article Three",
-        date:"Aug 11,2017",
+        title:'Article Three | GeethaSelvaraj',
+        heading:'Article Three',
+        date:'Aug 11,2017',
         content:`
                 <p>
                     This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
