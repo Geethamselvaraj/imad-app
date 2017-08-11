@@ -21,7 +21,7 @@ var articles = {
                     This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
                 </p>`
     },
-     'Article-two' : {
+     'articleTwo' : {
         title:'Article Two | GeethaSelvaraj',
         heading:'Article Two',
         date:'Aug 11,2017',
