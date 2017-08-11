@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-     'Article-One' : {
+     'articleOne' : {
         title:'Article One | GeethaSelvaraj',
         heading:'Article One',
         date:'Aug 10,2017',
@@ -36,7 +36,7 @@ var articles = {
                     This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
                 </p>`
     },
-     'Article-Three' : {
+     'articleThree' : {
         title:'Article Three | GeethaSelvaraj',
         heading:'Article Three',
         date:'Aug 11,2017',
