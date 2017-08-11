@@ -5,13 +5,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articles{
 var articleOne= {
     title:"Article-One | GeethaSelvaraj",
     heading:"Article One",
     date:"Aug 10,2017",
     content:`
             <p>
-                This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+                This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS....
             </p>
             <p>
                 This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
@@ -20,6 +21,37 @@ var articleOne= {
                 This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
             </p>`
 };
+var articleTwo= {
+    title:"Article-Two | GeethaSelvaraj",
+    heading:"Article Two",
+    date:"Aug 11,2017",
+    content:`
+            <p>
+                This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
+            </p>`
+};
+var articleThree= {
+    title:"Article-Three | GeethaSelvaraj",
+    heading:"Article Three",
+    date:"Aug 11,2017",
+    content:`
+            <p>
+                This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>
+            <p>
+                This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
+            </p>`
+};
+}
 function createTemplate (data)
 {
     var title=data.title;
@@ -68,11 +100,12 @@ app.get('/Article-one', function (req, res) {
 });
 
 app.get('/Article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  /*res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));*/
+  res.send(createTemplate(articleTwo));
 });
 
 app.get('/Article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+  res.send(createTemplate(articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
