@@ -12,4 +12,4 @@ img.onclick = function(){
     //var interval = setinterval + "1";
     //interval = interval + "px";
     img.style.marginleft = "100px";
-}
+};
