@@ -111,10 +111,10 @@ app.get('/Article-three', function (req, res) {
   res.send(createTemplate(articleThree));
 });*/
 
-var countercnt = 0;
+var counter = 0;
 app.get('/counter',function(req,res){
     countercnt = countercnt+1;
-    res.send(countercnt.toString());
+    res.send(counter.toString());
 });
 
 app.get('/ui/style.css', function (req, res) {
