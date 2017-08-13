@@ -21,5 +21,5 @@ var cnt = 0;
 clickbutton.onclick = funtion(){
     cnt = cnt+1;
     var cntspan = document.getElementById("count");
-    cntspan.innerHTML = cnt.getString();
+    cntspan.innerHTML = cnt.toString();
 };
