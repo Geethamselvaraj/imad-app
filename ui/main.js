@@ -20,6 +20,6 @@ var cnt = 0;
 
 clickbutton.onclick = funtion(){
     cnt = cnt+1;
-    var cntspan = document.getElementById("count");
-    cntspan.innerHTML = cnt.toString();
+    var span = document.getElementById("count");
+    span.innerHTML = cnt.toString();
 };
