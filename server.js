@@ -112,7 +112,7 @@ app.get('/Article-three', function (req, res) {
 });*/
 
 var countercnt = 0;
-app.get('/:counter',function(req,res){
+app.get('/counter',function(req,res){
     countercnt = countercnt+1;
     res.send(countercnt.toString());
 });
