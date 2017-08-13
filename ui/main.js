@@ -7,6 +7,6 @@ function move_right(){
     
 }
 var img = document.getElementById("imadimg");
-img.onClick = function(){
+img.onclick = function(){
     img.style.marginleft = '100px';
 };
