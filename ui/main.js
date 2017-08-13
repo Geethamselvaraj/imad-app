@@ -20,7 +20,7 @@ button.onclick = function(){
     // Create a request
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
-        if(request.readystatechange == XMLHttpRequest.DONE){
+        if(request.readystate == XMLHttpRequest.DONE){
             if(request.status == 200){
                 var cnt = request.responseText;
                 var span = document.getElementById("count");
@@ -33,7 +33,7 @@ button.onclick = function(){
     
     //counter = counter+1;
     
-    request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter');
+    request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter',true);
     request.sent(null);
         //var span = document.getElementById("count");
         //span.innerHTML = counter.toString();
