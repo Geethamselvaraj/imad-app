@@ -34,7 +34,7 @@ button.onclick = function(){
     counter = counter+1;
     
     request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter');
-        
+    request.sent(null);
         //var span = document.getElementById("count");
         //span.innerHTML = counter.toString();
 };
