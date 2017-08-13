@@ -3,11 +3,8 @@ console.log('Loaded!');
 var element= document.getElementById("main-text");
 element.innerHTML="My new html Page";
 // Move the image
-function move_right(){
-    
-}
 
-var img = document.getElementById("imadimg");
+var img = document.getElementById("madi");
 img.onclick = function(){
     //var interval = setinterval + "1";
     //interval = interval + "px";
