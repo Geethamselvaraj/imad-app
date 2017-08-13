@@ -16,9 +16,19 @@ img.onclick = function()
 };*/
 // Counter code
 var button = document.getElementById("counter");
+var request = new XMLHttpRequest();
+request.onreadystatechange = function(){
+    if(request.readystatechange == XMLHttpRequest.DONE){
+        if(request.status == 200){
+            var cnt = request.responseText;
+            var span = document.getElementById("count");
+            span.innerHTML = counter.toString();
+        }
+    }
+}
 var counter = 0;
 button.onclick = function(){
     counter = counter+1;
-    var span = document.getElementById("count");
-    span.innerHTML = counter.toString();
+    //var span = document.getElementById("count");
+    //span.innerHTML = counter.toString();
 };
