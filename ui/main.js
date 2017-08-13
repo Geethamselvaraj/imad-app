@@ -16,10 +16,10 @@ img.onclick = function()
 };*/
 // Counter code
 var button = document.getElementById("counter");
-var cnt = 0;
+var counter = 0;
 
 button.onclick = funtion(){
-    cnt = cnt+1;
+    counter = counter+1;
     var span = document.getElementById("count");
-    span.innerHTML = cnt.toString();
+    span.innerHTML = counter.toString();
 };
