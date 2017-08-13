@@ -96,10 +96,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-    var articleName = req.params.articleName;
+    var article_Name = req.params.article_Name;
     //articleName == article-one
     //articles == {} content object for article one
-  res.send(createTemplate(articles[articleName]));
+  res.send(createTemplate(articles[article_Name]));
 });
 
 /*app.get('/Article-two', function (req, res) {
