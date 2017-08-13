@@ -15,12 +15,11 @@ img.onclick = function()
     var interval= setInterval(moveRight,50);
 };*/
 // Counter code
-var cntbtn = document.getElementById("counter");
+var button = document.getElementById("counter");
 var cnt = 0;
 
-cntbtn.onclick = funtion(){
+button.onclick = funtion(){
     cnt = cnt+1;
     var cntspan = document.getElementById("count");
     cntspan.innerHTML = cnt.getString();
-    
 };
