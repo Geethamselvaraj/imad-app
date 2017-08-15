@@ -142,7 +142,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 var name = [];
 
-app.get('/submit-name'), functon(req,res)){
+app.get('/submit-name', functon(req,res)){
     var name;
     names.push(name);
     res.send(names)
