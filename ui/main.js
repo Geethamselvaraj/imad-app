@@ -56,4 +56,4 @@ request.send(null);
     //request.send(null);
         //var span = document.getElementById("count");
         //span.innerHTML = counter.toString();
-};
+//};
