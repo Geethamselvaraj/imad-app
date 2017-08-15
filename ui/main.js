@@ -57,3 +57,17 @@ request.send(null);
         //var span = document.getElementById("count");
         //span.innerHTML = counter.toString();
 };
+
+var nameInput = document.getElementById('name');
+name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onclick = function(){
+    var names = ['name1','name2','name3'];
+    var list = '';
+    for (i=0;i<names.length;i++){
+        list = '<l1>' + names[i] + '</l1>';
+    }
+    
+    var ul = document.getElementById('namelist');
+    ul.innerHTML = list;
+};
