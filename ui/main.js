@@ -71,6 +71,6 @@ submit.onclick = function(){
     }
     
     var ul = document.getElementById('namelist');
-    alert("ul :"+ul);
+    alert("list :"+list);
     ul.innerHTML = list;
 };
