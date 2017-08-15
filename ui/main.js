@@ -68,10 +68,10 @@ submit.onclick = function(){
         list = '<l1>' + names[i] + '</l1>';
         //alert("i : "+i);
         //alert("names[i] : "+names[i]);
-    
+    }  
     
     var ul = document.getElementById('namelist');
     alert("list : :"+list);
     ul.innerHTML = list;
-    }
+    
 };
