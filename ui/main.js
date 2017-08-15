@@ -45,7 +45,7 @@ request.onreadystatechange = function () {
 };
 
 // Make the request
-request.open('GET', 'http://http://prasannageetha.imad.hasura-app.io/counter', true);
+request.open('GET', '//http://prasannageetha.imad.hasura-app.io/counter', true);
 request.send(null);
     // Make a request
     //var counter = 0;
