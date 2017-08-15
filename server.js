@@ -1,141 +1,59 @@
-var express = require('express');
-var morgan = require('morgan');
-var path = require('path');
-
-var app = express();
-app.use(morgan('combined'));
-
-var articles = {
-     'articleOne' : {
-        title:'Article One | GeethaSelvaraj',
-        heading:'Article One',
-        date:'Aug 10,2017',
-        content:`
-                <p>
-                    This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS....
-                </p>
-                <p>
-                    This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
-                </p>
-                <p>
-                    This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
-                </p>`
-    },
-     'articleTwo' : {
-        title:'Article Two | GeethaSelvaraj',
-        heading:'Article Two',
-        date:'Aug 11,2017',
-        content:`
-                <p>
-                    This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
-                </p>
-                <p>
-                    This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
-                </p>
-                <p>
-                    This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of 2nd article. Introduction to server-side javascript and HTML/CSS.
-                </p>`
-    },
-     'articleThree' : {
-        title:'Article Three | GeethaSelvaraj',
-        heading:'Article Three',
-        date:'Aug 11,2017',
-        content:`
-                <p>
-                    This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
-                </p>
-                <p>
-                    This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
-                </p>
-                <p>
-                    This is the content of 3rd article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.This is the content of first article. Introduction to server-side javascript and HTML/CSS.
-                </p>`
-    }
-};
-function createTemplate (data)
+console.log('Loaded!');
+// adding element
+/*var element= document.getElementById("main-text");
+element.innerHTML="My new html Page";
+// Move the image
+var img= document.getElementById("madi");
+var marginLeft = 0;
+function moveRight()
 {
-    var title=data.title;
-    var heading=data.heading;
-    var date=data.date;
-    var content=data.content;
-    
-    var htmlTemplate=`
-    <html>
-        <head>
-            <title>
-                ${title}
-            </title>
-            <meta name="vireport" content="width=device-width intial-scale=1" />
-            <link href="/ui/style.css" rel="stylesheet" />
-        </head>
-        <body>
-            <div class="cssdesign">
-                <div>
-                    <a href="/"></a>
-                </div>
-                
-                <h3>
-                    ${heading}
-                </h3>
-                <div>
-                    ${date}
-                </div>
-                <div>
-                    ${content}
-                </div>
-            </div>
-        </body>
-    </html>
-    `;
-
-return htmlTemplate;
+    marginLeft = marginLeft + 1;
+    img.style.marginLeft = marginLeft + "px";
 }
+img.onclick = function()
+{
+    var interval= setInterval(moveRight,50);
+};*/
+// Counter code
+/*var button = document.getElementById("counter"); 
+button.onclick = function(){
+    // Create a request
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readystate === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById("count");
+                span.innerHTML = counter.toString();
+            }
+        }
+    };*/
+    //Creat a request object
+var request = new XMLHttpRequest();
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+//Capture the response and state and store it in a varible
+request.onreadystatechange = function () {
+  if (request.readyState === XMLHttpRequest.DONE) {
+      //Take some action
+      if (request.status === 200) {
+          var counter = request.responseText;
+          var span = document.getElementById('count');
+          span.innerHtml = counter.toString();
+      }
+  }
+  // Not done yet
+};
 
-app.get('/:articleName', function (req, res) {
-    var article_Name = req.params.article_Name;
-    //articleName == article-one
-    //articles == {} content object for article one
-  res.send(createTemplate(articles[article_Name]));
-});
-
-/*app.get('/Article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-  res.send(createTemplate(articleTwo));
-});
-
-app.get('/Article-three', function (req, res) {
-  res.send(createTemplate(articleThree));
-});*/
-
-//var counter = 0;
-app.get('/counter',function(req,res){
-    counter = counter+1;
-    res.send(counter.toString());
-});
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
-app.get('/favicon.ico', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-});
-
-// Do not change port, otherwise your app won't run on IMAD servers
-// Use 8080 only for local development if you already have apache running on 80
-
-var port = 8080;
-app.listen(port, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
-});
+// Make the request
+request.open('GET', 'http://http://prasannageetha.imad.hasura-app.io/counter', true);
+request.send(null);
+    // Make a request
+    //var counter = 0;
+    
+    //counter = counter+1;
+    
+    //request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter',true);
+    //request.send(null);
+        //var span = document.getElementById("count");
+        //span.innerHTML = counter.toString();
+//};
