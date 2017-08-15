@@ -111,10 +111,10 @@ app.get('/Article-three', function (req, res) {
   res.send(createTemplate(articleThree));
 });*/
 
-var counter1 = 0;
+var counter = 0;
 app.get('/counter',function(req,res){
-    counter1 = counter1+1;
-    res.send(counter1.toString());
+    counter = counter+1;
+    res.send(counter.toString());
 });
 
 app.get('/ui/style.css', function (req, res) {
