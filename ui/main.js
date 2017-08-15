@@ -42,7 +42,7 @@ request.onreadystatechange = function () {
       }
   }
   // Not done yet
-};
+//};
 
 // Make the request
 request.open('GET', 'http://prasannageetha.imad.hasura-app.io/counter', true);
@@ -56,4 +56,4 @@ request.send(null);
     //request.send(null);
         //var span = document.getElementById("count");
         //span.innerHTML = counter.toString();
-//};
+};
