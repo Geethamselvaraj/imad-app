@@ -26,19 +26,20 @@ button.onclick = function(){
                 var span = document.getElementById("count");
                 span.innerHTML = counter.toString();
             }
-        }
-    };*/
+        }*/
+        request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter',true);
+        request.send(null);
+    };
+    var submit = document.getElementById('submit_btn');
+    submit.onclick = function(){
     //Creat a request object
-var request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
 
 //Capture the response and state and store it in a varible
 request.onreadystatechange = function () {
   if (request.readyState === XMLHttpRequest.DONE) {
       //Take some action
       if (request.status === 200) {
-            
-            var submit = document.getElementById('submit_btn');
-            submit.onclick = function(){
             //var names = ['name1','name2','name3','name4'];
             var names = request.responseText;
             names = JSON.parse(names);
