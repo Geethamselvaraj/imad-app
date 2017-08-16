@@ -61,6 +61,7 @@ button.onclick = function(){
         //request.open('GET', 'http://prasannageetha.imad.hasura-app.io/counter', true);
         var nameInput = document.getElementById('name');
         name = nameInput.value;
+        alert("name :"+name);
         request.open('GET', 'http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name, true);
         request.send(null);
         // Make a request
