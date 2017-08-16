@@ -50,7 +50,7 @@ button.onclick = function(){
                 list += '<li>' + names[i] + '</li>';
             }  
         var ul = document.getElementById('namelist');
-        alert('ul :'+ul);
+        alert('list :'+list);
         ul.innerHTML = list;
           /*var counter = request.responseText;
           var span = document.getElementById('count');
