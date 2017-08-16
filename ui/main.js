@@ -35,9 +35,9 @@ button.onclick = function(){
     //Creat a request object
     var request = new XMLHttpRequest();
 
-//Capture the response and state and store it in a varible
-request.onreadystatechange = function () {
-  if (request.readyState === XMLHttpRequest.DONE) {
+    //Capture the response and state and store it in a varible
+    request.onreadystatechange = function () {
+    if (request.readyState === XMLHttpRequest.DONE) {
       //Take some action
       if (request.status === 200) {
             //var names = ['name1','name2','name3','name4'];
@@ -45,11 +45,10 @@ request.onreadystatechange = function () {
             names = JSON.parse(names);
             var list = '';
             for (i=0;i<names.length;i++){
-                list += '<l1>' + names[i] + '</l1>';
+                list += '<li>' + names[i] + '</li>';
             }  
-    
-    var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
+        var ul = document.getElementById('namelist');
+        ul.innerHTML = list;
           /*var counter = request.responseText;
           var span = document.getElementById('count');
           span.innerHTML = counter.toString();*/
