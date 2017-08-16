@@ -27,7 +27,7 @@ button.onclick = function(){
                 span.innerHTML = counter.toString();
             }
         }*/
-        request.open('GET','http://http://prasannageetha.imad.hasura-app.io/counter',true);
+        request.open('GET','http://prasannageetha.imad.hasura-app.io/counter',true);
         request.send(null);
     };
     var submit = document.getElementById('submit_btn');
@@ -52,7 +52,7 @@ button.onclick = function(){
     var nameinput = document.getElementById('name');
     var name = nameinput.value;
 
-    request.open('GET','http://venisavitri.imad.hasura-app.io/submit-name?name=' + name,true);
+    request.open('GET','http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);   
         // Make a request
         //var counter = 0;
