@@ -36,8 +36,7 @@ request.onreadystatechange = function () {
   if (request.readyState === XMLHttpRequest.DONE) {
       //Take some action
       if (request.status === 200) {
-            var nameInput = document.getElementById('name');
-            name = nameInput.value;
+            
             var submit = document.getElementById('submit_btn');
             submit.onclick = function(){
             //var names = ['name1','name2','name3','name4'];
@@ -60,6 +59,8 @@ request.onreadystatechange = function () {
 
 // Make the request
 //request.open('GET', 'http://prasannageetha.imad.hasura-app.io/counter', true);
+var nameInput = document.getElementById('name');
+name = nameInput.value;
 request.open('GET', 'http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name, true);
 request.send(null);
     // Make a request
