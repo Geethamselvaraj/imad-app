@@ -45,6 +45,7 @@ button.onclick = function(){
             names = JSON.parse(names);
             var list = '';
             for (i=0;i<names.length;i++){
+                alert('name[i] : '+names[i]);
                 list += '<li>' + names[i] + '</li>';
             }  
         var ul = document.getElementById('namelist');
