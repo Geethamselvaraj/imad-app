@@ -34,7 +34,7 @@ button.onclick = function(){
     submit.onclick=function(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
-        request.responeType = "text";
+        //request.responeType = "text";
         if(request.readyState === XMLHttpRequest.DONE)
         {
             if(request.status === 200){
