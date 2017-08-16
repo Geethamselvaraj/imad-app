@@ -36,16 +36,29 @@ request.onreadystatechange = function () {
   if (request.readyState === XMLHttpRequest.DONE) {
       //Take some action
       if (request.status === 200) {
-          var counter = request.responseText;
+            var nameInput = document.getElementById('name');
+            name = nameInput.value;
+            var submit = document.getElementById('submit_btn');
+            submit.onclick = function(){
+            var names = ['name1','name2','name3','name4'];
+            var list = '';
+            for (i=0;i<names.length;i++){
+                list += '<l1>' + names[i] + '</l1>';
+            }  
+    
+    var ul = document.getElementById('namelist');
+    ul.innerHTML = list;
+          /*var counter = request.responseText;
           var span = document.getElementById('count');
-          span.innerHTML = counter.toString();
+          span.innerHTML = counter.toString();*/
       }
   }
   // Not done yet
 };
 
 // Make the request
-request.open('GET', 'http://prasannageetha.imad.hasura-app.io/counter', true);
+//request.open('GET', 'http://prasannageetha.imad.hasura-app.io/counter', true);
+request.open('GET', 'http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name, true);
 request.send(null);
     // Make a request
     //var counter = 0;
@@ -58,20 +71,6 @@ request.send(null);
         //span.innerHTML = counter.toString();
 };
 
-var nameInput = document.getElementById('name');
-name = nameInput.value;
-var submit = document.getElementById('submit_btn');
-submit.onclick = function(){
-    var names = ['name1','name2','name3','name4'];
-    var list = '';
-    for (i=0;i<names.length;i++){
-        list += '<l1>' + names[i] + '</l1>';
-        //alert("i : "+i);
-        //alert("names[i] : "+names[i]);
-    }  
-    
-    var ul = document.getElementById('namelist');
 
-    ul.innerHTML = list;
     
 };
