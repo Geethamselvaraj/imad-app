@@ -120,7 +120,7 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
-var pool = new pool(config);
+var pool = new Pool(config);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
