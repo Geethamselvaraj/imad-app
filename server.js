@@ -124,7 +124,7 @@ var pool = new pool(config);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
-    pool.query(select * from test, function(err,result){
+    pool.query('select * from test', function(err,result){
         if(err){
             res.status(500).send(err.tostring());
         }else {
