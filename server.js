@@ -7,7 +7,8 @@ var config = {
     user:'prasannageetha',
     database:'prasannageetha',
     host:'dp.imad.hasura.io',
-    port:'5432'
+    port:'5432',
+    password:process.env.DB_PASSWORD
 }
 
 var app = express();
@@ -119,9 +120,17 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
+var pool = new pool(config);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
+    pool.query(select * from test, function(err,result)){
+        if(err){
+            res.status(500).send(err.tostring())
+        }else {
+            res.send(JSON.stringfy(result));
+        }
+    }
 });
 
 var counter = 0;
