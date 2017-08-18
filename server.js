@@ -158,12 +158,12 @@ app.get('/articles/:articleName', function (req, res) {
     //articles[articleName] == {} content object for article
     console.log('11111');
     var articleName = req.params.articleName;
-    console.log(select * from article where title='+req.params.articleName +');
+    console.log("select * from article where title='"+req.params.articleName +"'");
     pool.query("select * from article where title='"+req.params.articleName +"'", function(err,result) {
     if(err)
     {
          res.status(500).send(err.toString());
-         console.log('inside if");
+         console.log('inside if');
     }
     else 
     { console.log('inside else if');
