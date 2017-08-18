@@ -9,7 +9,7 @@ var config = {
     host:'db.imad.hasura-app.io',
     port:'5432',
     password:process.env.DB_PASSWORD
-}
+};
 
 var app = express();
 app.use(morgan('combined'));
@@ -126,7 +126,7 @@ app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
     pool.query('select * from test', function(err,result){
-        console.log("err :"+err.toString());
+        
         if(err){
             res.status(500).send(err.toString());
         }else {
