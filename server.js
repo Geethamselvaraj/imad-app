@@ -162,15 +162,18 @@ app.get('/articles/:articleName', function (req, res) {
     if(err)
     {
          res.status(500).send(err.toString());
+         console.log("inside if");
     }
     else 
-    {
+    { console.log("inside else if");
         if(result.rows.length === 0)
         {
             res.status(404).send('Article not found');
+            console.log("inside if if");
         } 
         else 
         {
+            console.log("inside else");
             var articleData = result.rows[0];
             res.send(createTemplate(articles[articleName]));
         }
