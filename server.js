@@ -18,7 +18,7 @@ var articles =
      'article-one'   : {
     title: 'Article-One | GeethaSelvaraj',
     heading: 'Article One',
-    date: "Aug 5 2017",
+    date: "Aug 4 2017",
     content: `
             <p>
                     This is The Content For My First Article. Alrighty ? I'mma Copy This A Bunch Of Times So Don't Go Reading Everything Again And Again Till You Go Crazy. Wait, Have You Already Gone Crazy ? Uh . . . Huh I Don't Think So Righty ? Then . . . Bye Bye ! *Wave*  . . . . . . . . . 
