@@ -126,10 +126,12 @@ app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
     pool.query('select * from test', function(err,result){
-        alert("err :"+err.toString());
+        
         if(err){
+            alert("inside if");
             res.status(500).send(err.toString());
         }else {
+            alert("inside else");
             res.send(JSON.stringify(result));
         }
     });
