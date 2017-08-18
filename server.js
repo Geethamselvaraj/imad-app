@@ -126,7 +126,7 @@ app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
     pool.query('select * from test', function(err,result){
-        alert("err :"+err);
+        alert("err :"+err.toString());
         if(err){
             res.status(500).send(err.toString());
         }else {
