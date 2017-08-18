@@ -10,7 +10,7 @@ var config = {
     port:'5432',
     password:process.env.DB_PASSWORD
 }
-alert("link :"+ user +database + host + port + password);
+
 var app = express();
 app.use(morgan('combined'));
 var articles = 
@@ -121,6 +121,7 @@ app.get('/favicon.ico', function (req, res) {
 });
 
 var pool = new Pool(config);
+alert("link :"+ user +database + host + port + password);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
