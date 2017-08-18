@@ -6,11 +6,10 @@ var Pool = require('pg').Pool;
 var config = {
     user:'prasannageetha',
     database:'prasannageetha',
-    //host:'http://db.imad.hasura-app.io',
-    host: 'localhost',
+    host:'db.imad.hasura-app.io',
     port:'5432',
     password:process.env.DB_PASSWORD
-};
+}
 
 var app = express();
 app.use(morgan('combined'));
@@ -122,18 +121,15 @@ app.get('/favicon.ico', function (req, res) {
 });
 
 var pool = new Pool(config);
-//console.log("link :"+ user +database + host + port + password);
-console.log("111111111");
+//alert("link :"+ user +database + host + port + password);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
     pool.query('select * from test', function(err,result){
-        
+        console.log("err :"+err.toString());
         if(err){
-            console.log("inside if");
             res.status(500).send(err.toString());
         }else {
-            console.log("inside else");
             res.send(JSON.stringify(result));
         }
     });
