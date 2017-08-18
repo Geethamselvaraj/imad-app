@@ -122,6 +122,7 @@ app.get('/favicon.ico', function (req, res) {
 
 var pool = new Pool(config);
 //console.log("link :"+ user +database + host + port + password);
+console.log("111111111");
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
