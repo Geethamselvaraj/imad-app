@@ -13,7 +13,7 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-//var articles = {
+/*var articles = {
      'article-one'   : {
     title: 'Article-One | GeethaSelvaraj',
     heading: 'Article One',
@@ -68,7 +68,7 @@ app.use(morgan('combined'));
             </p>`
          
                         },
-};
+};*/
 
 function createTemplate (data) {
 
