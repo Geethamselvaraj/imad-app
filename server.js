@@ -121,7 +121,7 @@ app.get('/favicon.ico', function (req, res) {
 });
 
 var pool = new Pool(config);
-alert("link :"+ user +database + host + port + password);
+//alert("link :"+ user +database + host + port + password);
 app.get('/test-dp', function (req, res) {
     //Make a select request
     //Return a response with the results
