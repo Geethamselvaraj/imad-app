@@ -120,13 +120,16 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
-funtcion hash(input){
+function hash(input){
     // How  to we create hash?
-    var hashed = cryptopbkdf2Sync();
+    var hashed = cryptopbkdf2Sync('secret', 'salt', 100000, 512, 'sha512');
+    //console.log(hashed.toString('hex'));  // '3745e48...aa39b34'
+    return hashed.toString('hex');
     
 }
+
 app.get('/hash/:input', function (req, res) {
-  res.hashedString = hash(req.params.input);
+  res.hashedString = hash(req.params.input, 'this-is-some-random-string');
   res.sent(hashedString);
 });
 
