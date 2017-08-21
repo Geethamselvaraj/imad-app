@@ -120,9 +120,9 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
-function hash(input){
+function hash(input,salt){
     // How  to we create hash?
-    var hashed = crypto.pbkdf2Sync('input', 'salt', 100000, 512, 'sha512');
+    var hashed = crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
     //console.log(hashed.toString('hex'));  // '3745e48...aa39b34'
     return hashed.toString('hex');
     
