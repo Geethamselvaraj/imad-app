@@ -71,7 +71,7 @@ app.use(morgan('combined'));
          
                         },
 };*/
-app.use(bodyParser.json));
+app.use(bodyParser.json());
 
 function createTemplate (data) {
 
