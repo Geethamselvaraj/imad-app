@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 
 var config = {
     user:'prasannageetha',
@@ -118,6 +119,17 @@ function createTemplate (data) {
 app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
+
+funtcion hash(input){
+    // How  to we create hash?
+    var hashed = cryptopbkdf2Sync();
+    
+}
+app.get('/hash/:input', function (req, res) {
+  res.hashedString = hash(req.params.input);
+  res.sent(hashedString);
+});
+
 
 var pool = new Pool(config);
 //alert("link :"+ user +database + host + port + password);
