@@ -126,7 +126,7 @@ function hash(input,salt){
     // How  to we create hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
     //console.log(hashed.toString('hex'));  // '3745e48...aa39b34'
-    return ["pbkdf2","10000",salt,hashed.toString('hex')].join("$");
+    return ["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
     
 }
 
