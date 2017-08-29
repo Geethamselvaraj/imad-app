@@ -32,13 +32,19 @@ img.onclick = function()
 //    };
     var submit = document.getElementById('submit_btn');
     submit.onclick=function(){
+        
+    // create a request object
     var request = new XMLHttpRequest();
+    
+    // catpture the response and store it in a variable
     request.onreadystatechange = function(){
         //request.responeType = "text";
+        
+        // Take some action
         if(request.readyState === XMLHttpRequest.DONE)
         {
             if(request.status === 200){
-                alert('httpesponseText : '+httpRequest.responseText);
+                /*alert('httpesponseText : '+httpRequest.responseText);
                 var names = request.responseText;
                 names = JSON.parse(names);
                 alert('names : '+names);
@@ -47,7 +53,8 @@ img.onclick = function()
                     list+='<li>' + names[i] + '</li>';
             }  
     var ul = document.getElementById('namelist');
-    ul.innerHTML=list;
+    ul.innerHTML=list;*/
+                console.log("User Logged In Successfully!");
 
             }
         }
