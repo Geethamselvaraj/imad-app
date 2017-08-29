@@ -68,7 +68,8 @@ img.onclick = function()
     console.log('-----');
     request.setRequestHeader('Content-Type', 'application/json');
     console.log('-----');
-    request.send(JSON.stringify({"username":username, "password":password})); 
+    //request.send(JSON.stringify({"username":username, "password":password})); 
+    request.send(JSON.stringify({"username":username,"password":password}));
      console.log('--===---');
         // Make a request
         //var counter = 0;
