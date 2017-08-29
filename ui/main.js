@@ -55,7 +55,11 @@ img.onclick = function()
     var ul = document.getElementById('namelist');
     ul.innerHTML=list;*/
                 console.log("User Logged In Successfully!");
-
+                alert('Logged in Successfully');
+            }
+            else (request.status === 403)
+            {
+                alert('Username/Password Incorrect');
             }
         }
     };
