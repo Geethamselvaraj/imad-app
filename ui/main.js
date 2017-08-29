@@ -56,7 +56,7 @@ img.onclick = function()
     var password = document.getElementById('password').value;
     var name = username.value;
     alert('name : '+name);
-    request.open('POST','http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name,true);
+    request.open('POST','http://prasannageetha.imad.hasura-app.io/submit-name?username=' + username, 'and password=' + password, true);
     request.send(JSON.strinfigy({username:username, password: password}));   
         // Make a request
         //var counter = 0;
