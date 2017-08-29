@@ -177,6 +177,9 @@ app.post('/login', function (req, res){
             if (hashedPassword === dbString){
                 res.send('Credentials Correct!');
                 res.session.auth = {userId: result.rows[0].id};
+                //set cookie with a session id
+                //internally, on the server side, it maps the session id an object
+            
             }else{
                 res.status(403).send('UserName/Passoword is invalid');
             }
@@ -185,6 +188,14 @@ app.post('/login', function (req, res){
         }
     });
     
+});
+
+app.get('/check-login', function (req, res) {
+    if(req.session && req.session.auth && req.session.auth.userId){
+        res.send('You are loggedin :' + req.session.auth.userId.toString());
+    } else {
+        res.send('You are not loggedin!');
+    }
 });
 
 var pool = new Pool(config);
