@@ -15,8 +15,8 @@ img.onclick = function()
     var interval= setInterval(moveRight,50);
 };*/
 // Counter code
-var button = document.getElementById("counter"); 
-button.onclick = function(){
+//var button = document.getElementById("counter"); 
+//button.onclick = function(){
     // Create a request
    /* var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -27,9 +27,9 @@ button.onclick = function(){
                 span.innerHTML = counter.toString();
             }
         }*/
-        request.open('GET','http://prasannageetha.imad.hasura-app.io/counter',true);
-        request.send(null);
-    };
+//        request.open('GET','http://prasannageetha.imad.hasura-app.io/counter',true);
+//        request.send(null);
+//    };
     var submit = document.getElementById('submit_btn');
     submit.onclick=function(){
     var request = new XMLHttpRequest();
@@ -52,11 +52,11 @@ button.onclick = function(){
             }
         }
     };
-    var nameinput = document.getElementById('name');
-    var name = nameinput.value;
+    var username = document.getElementById('username');
+    var name = username.value;
     alert('name : '+name);
-    request.open('GET','http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name,true);
-    request.send(null);   
+    request.open('POST','http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name,true);
+    request.send(JSON.strinfigy({username:username, password: password}));   
         // Make a request
         //var counter = 0;
         //counter = counter+1;
