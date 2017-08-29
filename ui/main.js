@@ -43,7 +43,7 @@ img.onclick = function()
         // Take some action
         if(request.readyState === XMLHttpRequest.DONE)
         {
-            console.log("!!!!!!");
+            console.log("!!!!!!" + request.status );
             if(request.status === 200){
                 console.log("User Logged In Successfully!");
                 alert('Logged in Successfully');
