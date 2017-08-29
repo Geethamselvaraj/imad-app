@@ -43,17 +43,8 @@ img.onclick = function()
         // Take some action
         if(request.readyState === XMLHttpRequest.DONE)
         {
+            console.log("!!!!!!");
             if(request.status === 200){
-                /*alert('httpesponseText : '+httpRequest.responseText);
-                var names = request.responseText;
-                names = JSON.parse(names);
-                alert('names : '+names);
-                var list = '';
-                for(var i=0;i<names.length;i++){
-                    list+='<li>' + names[i] + '</li>';
-            }  
-    var ul = document.getElementById('namelist');
-    ul.innerHTML=list;*/
                 console.log("User Logged In Successfully!");
                 alert('Logged in Successfully');
             }
