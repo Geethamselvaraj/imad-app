@@ -159,13 +159,14 @@ app.post('/create-user', function (req, res) {
 });
 
 app.post('/login', function (req, res){
+    console.log('----*----');
     var username = req.body.username;
     var password = req.body.password;
     console.log('----0----');
     pool.query('select * from "user" where username=$1',[username],function(err,result){
         if(err){
              console.log('--1---');
-            //res.status(500).send(err.toString());
+            res.status(500).send(err.toString());
         }else {
             if(result.rows.length === 0)
         {
