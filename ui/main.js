@@ -57,9 +57,13 @@ img.onclick = function()
                 console.log("User Logged In Successfully!");
                 alert('Logged in Successfully');
             }
-            else (request.status === 403)
+            else if (request.status === 403)
             {
                 alert('Username/Password Incorrect');
+            }
+            else if (request.status === 500)
+            {
+                alert('Something went wrong on the server');
             }
         }
     };
@@ -70,7 +74,8 @@ img.onclick = function()
     console.log(username);
     console.log(password);
     request.open('POST','http://prasannageetha.imad.hasura-app.io/login', true);
-    request.send(JSON.strinfigy({username:username, password: password}));   
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({username:username, password: password}));   
         // Make a request
         //var counter = 0;
         //counter = counter+1;
