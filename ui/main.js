@@ -52,7 +52,8 @@ img.onclick = function()
             }
         }
     };
-    var username = document.getElementById('username');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
     var name = username.value;
     alert('name : '+name);
     request.open('POST','http://prasannageetha.imad.hasura-app.io/submit-name?name=' + name,true);
