@@ -39,7 +39,7 @@ img.onclick = function()
     // catpture the response and store it in a variable
     request.onreadystatechange = function(){
         //request.responeType = "text";
-        
+        console.log("========");
         // Take some action
         if(request.readyState === XMLHttpRequest.DONE)
         {
