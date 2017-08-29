@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var config = {
     user:'prasannageetha',
@@ -15,6 +16,12 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
+app.use(session({
+    secret:'someRandomSecretValue',
+    cookie: {maxage: 1000*60*60*24*30}
+}))
+
 /*var articles = {
      'article-one'   : {
     title: 'Article-One | GeethaSelvaraj',
@@ -71,7 +78,7 @@ app.use(morgan('combined'));
          
                         },
 };*/
-app.use(bodyParser.json());
+
 
 function createTemplate (data) {
 
@@ -169,6 +176,7 @@ app.post('/login', function (req, res){
             var hashedPassword = hash(password,salt);
             if (hashedPassword === dbString){
                 res.send('Credentials Correct!');
+                res.session.auth = {userId: result.rows[0].id};
             }else{
                 res.status(403).send('UserName/Passoword is invalid');
             }
