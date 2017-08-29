@@ -66,10 +66,10 @@ img.onclick = function()
     console.log(password);
     request.open('POST','http://prasannageetha.imad.hasura-app.io/login', true);
     console.log('-----');
-    request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('Content-Type', 'application/JSON');
     console.log('-----');
     //request.send(JSON.stringify({"username":username, "password":password})); 
-    request.send(json.stringify({"username":username,"password":password}));
+    request.send(JSON.stringify({"username":username,"password":password}));
      console.log('--===---');
         // Make a request
         //var counter = 0;
